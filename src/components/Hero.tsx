@@ -1,11 +1,20 @@
-import { company } from '../data/content';
+import { company, photos } from '../data/content';
 import GoldTicker from './GoldTicker';
 
 export default function Hero() {
+  const { hero } = photos;
+
   return (
     <section className="hero" id="top">
-      <div className="hero__strata" aria-hidden="true">
-        <span /><span /><span /><span />
+      <div className="hero__bg" aria-hidden="true">
+        <img
+          src={hero.src}
+          srcSet={hero.srcSet}
+          sizes="100vw"
+          alt={hero.alt}
+          width={hero.width}
+          height={hero.height}
+        />
       </div>
       <div className="container hero__content">
         <p className="eyebrow">West African gold producer · GSE: {company.ticker}</p>

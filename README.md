@@ -20,8 +20,26 @@ src/
   components/          # One component per section
   App.tsx              # Page composition
   styles.css           # Design tokens + styles (no CSS framework)
+public/images/         # Site photography (WebP) + og-image.jpg for link previews
 vercel.json            # Vercel build settings + SPA rewrite
 ```
+
+## Photography
+All photos are from [Unsplash](https://unsplash.com) under the [Unsplash License](https://unsplash.com/license) (free for commercial use, no attribution required — credited here as a courtesy). They are stock images and do not show real Aurum Ridge sites. To swap one, replace the file in `public/images/` and update its entry (`photos` or `operations[].image`) in `src/data/content.ts`.
+
+| File | Used in | Photographer |
+| --- | --- | --- |
+| `hero-open-pit-*.webp`, `og-image.jpg` | Hero, link previews | [Leonie Clough](https://unsplash.com/photos/CH2yRJCocRg) |
+| `about-pit.webp` | About | [Matthew de Livera](https://unsplash.com/photos/4Gf51uY0YQE) |
+| `about-underground.webp` | About | [Munkh-Erdene Eenee](https://unsplash.com/photos/HA_akXkTrd0) |
+| `op-kesse.webp` | Operations — Kesse Hill | [Abdul Basit](https://unsplash.com/photos/1O_HNWeY0O4) |
+| `op-tano.webp` | Operations — Tano River | [Jandira Sonnendeck](https://unsplash.com/photos/0DUxxHkRucs) |
+| `op-sikasso.webp` | Operations — Sikasso Belt | [Shane McLendon](https://unsplash.com/photos/9jPJrfLTBi0) |
+| `op-birim.webp` | Operations — Birim North | [Badibanga Roger](https://unsplash.com/photos/-2aCPUaYOGQ) |
+| `sustain-forest.webp` | Sustainability | [Ato Aikins](https://unsplash.com/photos/Mw6MYQaB0L4) |
+| `sustain-seedling.webp` | Sustainability | [Jonathan Kemper](https://unsplash.com/photos/CbZh3kaPxrE) |
+| `investors-gold.webp` | Investors | [Jingming Pan](https://unsplash.com/photos/iYsrkq5qq0Q) |
+| `careers-engineer.webp` | Careers | [Joseph Okon](https://unsplash.com/photos/hSD_Igxu4r0) |
 
 ## Deploy on Vercel
 
@@ -48,4 +66,4 @@ vercel --prod   # production deployment
 - Real gold price: add `api/gold-price.ts` (Vercel Function) that calls a price API with a secret key stored in Vercel env vars, then fetch it in `GoldTicker.tsx`.
 - Real contact form: add `api/contact.ts` sending email via Resend/SendGrid.
 - Multi-page: add `react-router-dom` (the SPA rewrite in `vercel.json` is already in place).
-- Images: drop photos in `public/` and reference them as `/my-photo.jpg`.
+- Real site photos: replace the stock images in `public/images/` with photography of your own operations.

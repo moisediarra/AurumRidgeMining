@@ -6,7 +6,10 @@ export default function Footer() {
       <div className="container footer__inner">
         <div>
           <p className="footer__brand">{company.name}</p>
-          <p className="footer__note">Fictional company — demo website built with React + TypeScript.</p>
+          <p className="footer__note">
+            Fictional company — demo website built with React + TypeScript. Photos from{' '}
+            <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>.
+          </p>
         </div>
         <nav className="footer__nav">
           {navLinks.map((l) => (

@@ -12,6 +12,14 @@ export interface Stat {
   decimals?: number;
 }
 
+export interface Photo {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  srcSet?: string;
+}
+
 export type OperationStatus = 'Production' | 'Development' | 'Exploration';
 
 export interface Operation {
@@ -22,6 +30,7 @@ export interface Operation {
   output: string;
   reserves: string;
   description: string;
+  image: Photo;
 }
 
 export interface Pillar {
@@ -53,6 +62,54 @@ export const company = {
   ticker: 'ARGM',
 };
 
+// Photos live in public/images (Unsplash License — see README for credits).
+export const photos = {
+  hero: {
+    src: '/images/hero-open-pit-1920.webp',
+    srcSet:
+      '/images/hero-open-pit-800.webp 800w, /images/hero-open-pit-1280.webp 1280w, /images/hero-open-pit-1920.webp 1920w',
+    alt: '',
+    width: 1920,
+    height: 1280,
+  },
+  aboutPit: {
+    src: '/images/about-pit.webp',
+    alt: 'Terraced walls of a large open-pit gold mine under a cloudy sky',
+    width: 900,
+    height: 1200,
+  },
+  aboutUnderground: {
+    src: '/images/about-underground.webp',
+    alt: 'Miner in high-visibility gear walking beside a loader in an underground tunnel',
+    width: 600,
+    height: 900,
+  },
+  sustainForest: {
+    src: '/images/sustain-forest.webp',
+    alt: 'Aerial view of a river winding through dense tropical forest',
+    width: 1400,
+    height: 734,
+  },
+  sustainSeedling: {
+    src: '/images/sustain-seedling.webp',
+    alt: 'Gloved hands planting a young seedling in dark soil',
+    width: 700,
+    height: 1050,
+  },
+  investorsGold: {
+    src: '/images/investors-gold.webp',
+    alt: 'Stacked fine gold bullion bars',
+    width: 1000,
+    height: 667,
+  },
+  careersEngineer: {
+    src: '/images/careers-engineer.webp',
+    alt: 'Smiling engineer wearing a white hard hat, safety glasses and orange coveralls',
+    width: 900,
+    height: 1350,
+  },
+} satisfies Record<string, Photo>;
+
 export const navLinks: NavLink[] = [
   { label: 'About', href: '#about' },
   { label: 'Operations', href: '#operations' },
@@ -79,6 +136,12 @@ export const operations: Operation[] = [
     reserves: '1.9M oz',
     description:
       'Our flagship open-pit and underground operation, with a 4.5 Mtpa carbon-in-leach processing plant.',
+    image: {
+      src: '/images/op-kesse.webp',
+      alt: 'Excavator working the benches of an open-pit mine',
+      width: 800,
+      height: 533,
+    },
   },
   {
     id: 'tano',
@@ -89,6 +152,12 @@ export const operations: Operation[] = [
     reserves: '1.2M oz',
     description:
       'Heap-leach operation commissioned in 2022, now running on 40% solar-hybrid power.',
+    image: {
+      src: '/images/op-tano.webp',
+      alt: 'Conveyor stackers building ore stockpiles',
+      width: 800,
+      height: 494,
+    },
   },
   {
     id: 'sikasso',
@@ -99,6 +168,12 @@ export const operations: Operation[] = [
     reserves: '0.7M oz',
     description:
       'Feasibility study completed; construction of the processing plant began in Q2 2026.',
+    image: {
+      src: '/images/op-sikasso.webp',
+      alt: 'Aerial view of excavators and dozers preparing a construction site',
+      width: 800,
+      height: 600,
+    },
   },
   {
     id: 'birim',
@@ -109,6 +184,12 @@ export const operations: Operation[] = [
     reserves: 'Resource pending',
     description:
       'Early-stage greenfield exploration targeting a 22 km shear-hosted gold corridor.',
+    image: {
+      src: '/images/op-birim.webp',
+      alt: 'Drill rig working on rocky exploration ground',
+      width: 800,
+      height: 600,
+    },
   },
 ];
 

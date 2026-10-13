@@ -1,4 +1,4 @@
-import { reports } from '../data/content';
+import { company, photos, reports } from '../data/content';
 import SectionHeading from './SectionHeading';
 
 const production = [
@@ -33,6 +33,17 @@ export default function Investors() {
         </div>
 
         <div>
+          <figure className="investors__media">
+            <img
+              src={photos.investorsGold.src}
+              alt={photos.investorsGold.alt}
+              width={photos.investorsGold.width}
+              height={photos.investorsGold.height}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Listed on the Ghana Stock Exchange · {company.ticker}</figcaption>
+          </figure>
           <h3 className="list-title">Latest reports & news</h3>
           <ul className="reports">
             {reports.map((r) => (

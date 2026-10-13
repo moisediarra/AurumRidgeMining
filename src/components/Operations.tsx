@@ -39,22 +39,32 @@ export default function Operations() {
         <div className="ops-grid">
           {visible.map((op) => (
             <article className="op-card" key={op.id}>
-              <div className="op-card__top">
+              <div className="op-card__media">
+                <img
+                  src={op.image.src}
+                  alt={op.image.alt}
+                  width={op.image.width}
+                  height={op.image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span className={`badge badge--${op.status.toLowerCase()}`}>{op.status}</span>
-                <span className="op-card__loc">{op.location}</span>
               </div>
-              <h3>{op.name}</h3>
-              <p>{op.description}</p>
-              <dl className="op-card__facts">
-                <div>
-                  <dt>Output</dt>
-                  <dd>{op.output}</dd>
-                </div>
-                <div>
-                  <dt>Reserves</dt>
-                  <dd>{op.reserves}</dd>
-                </div>
-              </dl>
+              <div className="op-card__body">
+                <span className="op-card__loc">{op.location}</span>
+                <h3>{op.name}</h3>
+                <p>{op.description}</p>
+                <dl className="op-card__facts">
+                  <div>
+                    <dt>Output</dt>
+                    <dd>{op.output}</dd>
+                  </div>
+                  <div>
+                    <dt>Reserves</dt>
+                    <dd>{op.reserves}</dd>
+                  </div>
+                </dl>
+              </div>
             </article>
           ))}
         </div>
